@@ -14,11 +14,11 @@ from ollama import Client
 
 
 
-# client = Client(
-#     host="https://ollama.com",
-#     headers={'Authorization': 'Bearer ' + st.secrets["OLLAMA_API_KEY"]}
-#     # headers={'Authorization': 'Bearer ' + os.environ.get('OLLAMA_API_KEY')}
-# )
+client = Client(
+    host="https://ollama.com",
+    headers={'Authorization': 'Bearer ' + st.secrets["OLLAMA_API_KEY"]}
+    # headers={'Authorization': 'Bearer ' + os.environ.get('OLLAMA_API_KEY')}
+)
 
 # messages = [
 #   {
