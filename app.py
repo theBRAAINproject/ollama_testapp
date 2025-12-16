@@ -13,14 +13,14 @@ client = Client(
     # headers={'Authorization': 'Bearer ' + os.environ.get('OLLAMA_API_KEY')}
 )
 
-# messages = [
-#   {
-#     'role': 'user',
-#     'content': 'Why is the sky blue?',
-#   },
-#  ]
-# for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
-#   print(part['message']['content'], end='', flush=True)
+messages = [
+  {
+    'role': 'user',
+    'content': 'Why is the sky blue?',
+  },
+ ]
+for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
+  st.write(part['message']['content'], end='', flush=True)
 
 # response = chat(
 #   model='gpt-oss:120b',
@@ -36,10 +36,10 @@ Developers can leverage various open-source models through a simple interface, i
 """
 
 
-prompt = f"Summarize the following text in one sentence:\n\"\"\"\n{text}\n\"\"\""
-result = generate(model='gpt-oss:120', prompt=prompt)
-print("Summary:", result['response'])
-st.print("Summary:", result['response'])
+# prompt = f"Summarize the following text in one sentence:\n\"\"\"\n{text}\n\"\"\""
+# result = generate(model='gpt-oss:120', prompt=prompt)
+# print("Summary:", result['response'])
+# st.print("Summary:", result['response'])
 
 
 
