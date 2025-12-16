@@ -4,7 +4,7 @@ st.write("hello world")
 
 from ollama import Client
 # ollama signin
-ollama pull gpt-oss:120b-cloud
+# ollama pull gpt-oss:120b-cloud
 
 
 client = Client(
