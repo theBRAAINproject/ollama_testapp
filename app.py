@@ -13,15 +13,34 @@ client = Client(
     # headers={'Authorization': 'Bearer ' + os.environ.get('OLLAMA_API_KEY')}
 )
 
-messages = [
-  {
-    'role': 'user',
-    'content': 'Why is the sky blue?',
-  },
- ]
-for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
-  print(part['message']['content'], end='', flush=True)
-  st.write(part['message']['content'])
+
+####works:
+# messages = [
+#   {
+#     'role': 'user',
+#     'content': 'Why is the sky blue?',
+#   },
+#  ]
+# for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
+#   print(part['message']['content'], end='', flush=True)
+#   st.write(part['message']['content'])
+
+
+###check:
+
+response = chat(
+  model='qwen3',
+  messages=[{'role': 'user', 'content': 'How many letter r are in strawberry?'}],
+  think=False,
+  stream=False,
+)
+
+# print('Thinking:\n', response.message.thinking)
+print('Answer:\n', response.message.content)
+
+
+
+
 
 # response = chat(
 #   model='gpt-oss:120b',
