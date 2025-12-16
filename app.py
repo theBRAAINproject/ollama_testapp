@@ -25,7 +25,7 @@ response = client.chat(
 )
 
 # print('Thinking:\n', response.message.thinking)
-print('Answer:\n', response.message.content)
+st.write('Answer:\n', response.message.content)
 
 
 
