@@ -14,24 +14,13 @@ client = Client(
 )
 
 
-####works:
-# messages = [
-#   {
-#     'role': 'user',
-#     'content': 'Why is the sky blue?',
-#   },
-#  ]
-# for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
-#   print(part['message']['content'], end='', flush=True)
-#   st.write(part['message']['content'])
 
 
 ###check:
 
-response = chat(
+response = client.chat(
   model='qwen3',
   messages=[{'role': 'user', 'content': 'How many letter r are in strawberry?'}],
-  think=False,
   stream=False,
 )
 
