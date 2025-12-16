@@ -19,7 +19,16 @@ messages = [
   },
 ]
 
-for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
+# response = chat(
+#   model='gpt-oss',
+#   messages=[{'role': 'user', 'content': 'Tell me about Canada.'}],
+#   format='json'
+# )
+# print(response.message.content)
+
+
+
+for part in client.chat('gpt-oss:120b', messages=messages, stream=False):
   print(part['message']['content'], end='', flush=True)
 
 
