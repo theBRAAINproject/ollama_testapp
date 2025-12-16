@@ -2,7 +2,7 @@
 import streamlit as st
 import os
 st.write("hello world")
-
+from ollama import chat
 from ollama import Client
 
 
@@ -12,24 +12,30 @@ client = Client(
     # headers={'Authorization': 'Bearer ' + os.environ.get('OLLAMA_API_KEY')}
 )
 
-messages = [
-  {
-    'role': 'user',
-    'content': 'Why is the sky blue?',
-  },
-]
+# messages = [
+#   {
+#     'role': 'user',
+#     'content': 'Why is the sky blue?',
+#   },
+#  ]
+# for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
+#   print(part['message']['content'], end='', flush=True)
 
-# response = chat(
-#   model='gpt-oss',
-#   messages=[{'role': 'user', 'content': 'Tell me about Canada.'}],
-#   format='json'
+response = chat(
+  model='gpt-oss:120b',
+  messages=[{'role': 'user', 'content': 'Tell me about Canada.'}],
+)
+print(response.message.content)
+
+
+
+# responses_result = client.responses.create(
+#   model='qwen3:8b',
+#   input='Write a short poem about the color blue',
 # )
-# print(response.message.content)
+# print(responses_result.output_text)
 
 
-
-for part in client.chat('gpt-oss:120b', messages=messages, stream=False):
-  print(part['message']['content'], end='', flush=True)
 
 
 
