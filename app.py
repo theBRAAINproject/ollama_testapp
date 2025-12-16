@@ -20,7 +20,8 @@ messages = [
   },
  ]
 for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
-  st.write(part['message']['content'], end='', flush=True)
+  print(part['message']['content'], end='', flush=True)
+  st.write(part['message']['content'])
 
 # response = chat(
 #   model='gpt-oss:120b',
