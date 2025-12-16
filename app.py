@@ -19,7 +19,7 @@ client = Client(
 ###check:
 
 response = client.chat(
-  model='qwen3',
+  model='gpt-oss:120b',
   messages=[{'role': 'user', 'content': 'How many letter r are in strawberry?'}],
   stream=False,
 )
