@@ -15,9 +15,20 @@ client = Client(
 
 
 
+####works:
+# messages = [
+#   {
+#     'role': 'user',
+#     'content': 'Why is the sky blue?',
+#   },
+#  ]
+# for part in client.chat('gpt-oss:120b', messages=messages, stream=True):
+#   print(part['message']['content'], end='', flush=True)
+#   st.write(part['message']['content'])
 
-###check:
 
+
+###works:
 response = client.chat(
   model='gpt-oss:120b',
   messages=[{'role': 'user', 'content': 'How many letter r are in strawberry?'}],
